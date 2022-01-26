@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: grid;
+  width: 900px;
+  height: 900px;
+}
+
+/* .square {
+
+} */
