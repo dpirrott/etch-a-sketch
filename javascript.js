@@ -4,7 +4,30 @@
 
 function hoverIn(e) {
   let currentSquare = e.srcElement;
-  currentSquare.style.backgroundColor = "white";
+  if (currentSquare.style.backgroundColor === "") {
+    let redCode = (Math.random()) * 255;
+    let greenCode = (Math.random()) * 255;
+    let blueCode = (Math.random()) * 255;
+    currentSquare.style.backgroundColor = "rgb(" + redCode + ", " + greenCode + ", " + blueCode + ")";
+  }else if (currentSquare.style.backgroundColor !== "black") {
+    console.log(currentSquare.style.backgroundColor);
+    let color = currentSquare.style.backgroundColor;
+    let stringToSplit = color.slice(4, color.length - 1);
+    let redGreenBlue = stringToSplit.split(", ");
+    let tempArray = [];
+    redGreenBlue.forEach(color => {
+      tempArray.push(color - 0.1 * 255);
+    });
+    tempArray.forEach((color, index) => {
+      redGreenBlue[index] = color;
+    });
+    redCode = redGreenBlue[0];
+    greenCode = redGreenBlue[1];
+    blueCode = redGreenBlue[2];
+    currentSquare.style.backgroundColor = "rgb(" + redCode + ", " + greenCode + ", " + blueCode + ")";
+    console.log(currentSquare.style.backgroundColor);
+  }
+  
 }
 
 function attachContainer() {
