@@ -1,14 +1,25 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: white;
 }
 
 #container {
   display: grid;
   width: 900px;
   height: 900px;
+  margin: 0 auto;
+  background-color: black;
 }
 
-/* .square {
 
-} */
+#reset {
+  font-size: 28px;
+  padding: 0 10px;
+  border-radius: 10px;
+}
